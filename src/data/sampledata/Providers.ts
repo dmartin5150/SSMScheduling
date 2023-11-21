@@ -1,6 +1,6 @@
 import { Provider } from "../datatypes/provider";
 
-export const Providers:Provider[] = [
+export const PROVIDERS:Provider[] = [
     {providerId:1, providerName:'Elrod,Leonard',hasBlock:true, blockId:1,procedureIds:[1,2,3]},
     {providerId:2, providerName:'Rodriguez,Alvarez',hasBlock:true, blockId:2,procedureIds:[4]},
     {providerId:3, providerName:'Smith,John',hasBlock:true, blockId:3,procedureIds:[]},

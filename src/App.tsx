@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import SchedulingHome from './views/Scheduling/SchedulingHome';
 import './App.css';
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>My app</h1>
+        <SchedulingHome />
       </header>
     </div>
   );
