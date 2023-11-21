@@ -1,6 +1,7 @@
 import { SCHEDULING_STATUS } from "./schedulingStatus";
 
 export type Procedure = {
+    procedureId:number;
     providerId:number, 
     providerName: string;
     timeString:string;
