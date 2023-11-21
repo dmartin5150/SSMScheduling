@@ -1,5 +1,5 @@
 import React  from "react";
-import ProviderColumnHeader from "./ProviderColumnHeader/ProviderColumnHeader.component";
+import ProviderColumnHeader from "./ProviderColumnHeader/ProviderColumnHeader";
 import { Provider } from "../../data/datatypes/provider";
 import { Block } from "../../data/datatypes/block";
 import './ProviderColumn.css';
