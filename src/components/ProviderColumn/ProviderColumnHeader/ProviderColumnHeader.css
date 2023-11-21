@@ -12,6 +12,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border:5px solid black;
+    border-bottom:none;
     
     .provider-column-header-data {
         display:flex;

@@ -1,10 +1,20 @@
 import React from 'react';
+import { Procedure } from '../../../data/datatypes/procedure';
+import ProcedureCard from '../../ProcedureCard/ProcedureCard';
 import './ProcedureContainer.css';
 
-const ProcedureContainer: React.FC = () => {
+interface ProcedureContainerProps {
+    procedures:Procedure[];
+}
+
+const ProcedureContainer: React.FC<ProcedureContainerProps> = ({procedures}) => {
     return (
         <div className='procedure-container'>
-            <h1>Container</h1>
+        {
+            procedures.map((procedure) => {
+                return <ProcedureCard procedure={procedure} key={procedure.procedureId} />
+            })
+        }
         </div>
     )
 }

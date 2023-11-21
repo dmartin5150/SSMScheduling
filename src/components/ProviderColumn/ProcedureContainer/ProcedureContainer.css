@@ -2,9 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 5px solid #1551B4;
-    background-color: #E8F5FE;;
-    /* background-color: #3d95d4; */
+
+    border: 5px solid black;
+    border-top:none;
     height:90%;
     margin-top: -5px;
+
+}
+
+.block {
+    border: 5px solid #1551B4;
+    background-color: #E8F5FE;
 }
