@@ -5,14 +5,14 @@ import AddButton from '../AddButton/AddButton';
 import './BlockReleaseHeader.css';
 
 
-interface ProviderColumnHeaderProps  {
+interface BlockReleaseHeaderProps  {
     provider:Provider,
     block: Block
 }
 
 
 
-const BlockReleaseHeader: React.FC<ProviderColumnHeaderProps> = ({provider, block}) => {
+const BlockReleaseHeader: React.FC<BlockReleaseHeaderProps> = ({provider, block}) => {
     return(
         <div className='block-release-header'>
             <div className='block-release-header-data'>

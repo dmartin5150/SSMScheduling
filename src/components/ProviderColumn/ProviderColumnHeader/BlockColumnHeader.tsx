@@ -5,14 +5,14 @@ import AddButton from '../AddButton/AddButton';
 import './BlockColumnHeader.css';
 
 
-interface ProviderColumnHeaderProps  {
+interface BlockColumnHeaderProps  {
     provider:Provider,
     block: Block
 }
 
 
 
-const BlockColumnHeader: React.FC<ProviderColumnHeaderProps> = ({provider, block}) => {
+const BlockColumnHeader: React.FC<BlockColumnHeaderProps> = ({provider, block}) => {
     return(
         <div className='provider-column-header'>
             <div className='provider-column-header-data'>

@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import { Procedure } from '../../../data/datatypes/procedure';
 import { Block } from '../../../data/datatypes/block';
 import ProcedureCard from '../../ProcedureCard/ProcedureCard';
+import OpenTimeCard from '../../OpenTimeCard/OpenTimeCard';
+import { PROCEDURE_TYPES } from '../../../data/datatypes/procedure';
 import './ProcedureContainer.css';
 
 interface ProcedureContainerProps {
@@ -28,7 +30,11 @@ const ProcedureContainer: React.FC<ProcedureContainerProps> = ({procedure,block}
 
     return (
         <div className={`procedure-container ${showBlockOutline} `}>
-            <ProcedureCard procedure={procedure} key={procedure.procedureId} />
+        {
+            procedure.procedureType === PROCEDURE_TYPES.PROCEDURE ? 
+            <ProcedureCard procedure={procedure} key={procedure.procedureId} /> :
+            <OpenTimeCard procedure={procedure} key={procedure.procedureId} /> 
+        }
         </div>
     )
 }
