@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Procedure } from '../../data/datatypes/procedure';
+import classnames from "classnames";
 import './ProcedureCard.css';
+import { SCHEDULING_STATUS } from '../../data/datatypes/schedulingStatus';
 
 
 interface ProcedureCardProps {
@@ -11,6 +13,20 @@ interface ProcedureCardProps {
 
 const ProcedureCard: React.FC<ProcedureCardProps> = ({procedure}) => {
 
+    const [background, setBackGround] = useState('')
+
+
+    useEffect(() => {
+        if (procedure.scheduleStatus === SCHEDULING_STATUS.SCHEDULED) {
+            setBackGround('scheduled');
+        } else if (procedure.scheduleStatus === SCHEDULING_STATUS.UNSCHEDULED) {
+            setBackGround('unscheduled');
+        } else if (procedure.scheduleStatus === SCHEDULING_STATUS.NEEDS_REVISION) {
+            setBackGround('revision');
+        } else {
+            setBackGround('other');
+        }
+    },[procedure]);
 
 
     const firstLine = () => {
@@ -28,7 +44,7 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({procedure}) => {
 
 
     return(
-        <div className='procedure-card'>
+        <div className={`procedure-card ${background}`}>
             <div className='procedure-card-data'>
                 <div className='procedure-card-data-heading'>
                     {firstLine()}
@@ -59,13 +75,3 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({procedure}) => {
 export default ProcedureCard;
 
 
-// procedureId:number;
-// providerId:number, 
-// providerName: string;
-// timeString:string;
-// patientName:string;
-// procedureName:string;
-// room?:string;
-// FIN?:string;
-// inBlock:boolean;
-// scheduleStatus:SCHEDULING_STATUS;
