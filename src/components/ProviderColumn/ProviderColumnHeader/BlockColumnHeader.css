@@ -2,7 +2,6 @@
     background-color: #1551B4;
 
     color:white;
-    border-radius: 5px;
     min-width:280px;
     height:70px;
     text-align: left;
@@ -12,8 +11,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border:5px solid black;
-    border-bottom:none;
+
     
     .provider-column-header-data {
         display:flex;

@@ -1,5 +1,5 @@
 import React  from "react";
-import ProviderColumnHeader from "./ProviderColumnHeader/ProviderColumnHeader";
+import BlockColumnHeader from "./ProviderColumnHeader/BlockColumnHeader";
 import ProcedureContainer from "./ProcedureContainer/ProcedureContainer";
 import { Provider } from "../../data/datatypes/provider";
 import { Block } from "../../data/datatypes/block";
@@ -20,8 +20,10 @@ interface ProviderColumnProps {
 const ProviderColumn: React.FC<ProviderColumnProps> = ({provider,block, procedures}) => {
     return (
         <div className='provider-column'>
-            <ProviderColumnHeader provider={provider} block={block} />
-            <ProcedureContainer procedures={procedures} />
+            <BlockColumnHeader provider={provider} block={block} />
+            {procedures.map((procedure) => {
+                    return <ProcedureContainer procedure={procedure} />
+            })}  
         </div>
     )
 }
