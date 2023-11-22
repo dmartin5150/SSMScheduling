@@ -10,11 +10,37 @@ interface ProcedureCardProps {
 
 
 const ProcedureCard: React.FC<ProcedureCardProps> = ({procedure}) => {
+
+
+
+    const firstLine = () => {
+        return (
+        procedure.inBlock ? 
+        <div className='procedure-card-data-firstline'>
+            <p className='procedure-card-inBlock'><b>BLOCK PROCEDURE</b></p>
+            <p className='procedure-card-provider'><b>{procedure.providerName}</b></p> 
+        </div>
+            :
+        <div className='procedure-card-data-firstline'>
+            <p className='procedure-card-provider'><b>{procedure.providerName}</b></p> 
+        </div>)
+    }
+
+
     return(
         <div className='procedure-card'>
             <div className='procedure-card-data'>
-                {procedure.inBlock && <p className='procedure-card-inBlock'><b>BLOCK PROCEDURE</b></p>}
-                <p className='procedure-card-provider'><b>{procedure.providerName}</b></p> 
+                <div className='procedure-card-data-heading'>
+                    {firstLine()}
+                    <div className='procedure-card-data-heading-rightside'>
+                        <div className='procedure-card-data-container'>
+                            <img className='procedure-card-data-image' src='edit.png' alt='edit' />
+                        </div>
+                        <div className='procedure-card-data-container'>
+                            <img className='procedure-card-data-image' src='delete.png' alt='delete' />
+                        </div>
+                    </div>
+                </div>
                 <p className='procedure-card-timeString'>{procedure.timeString}</p> 
                 <p className='procedure-card-patientName'>{procedure.patientName}</p> 
                 <p className='procedure-card-procedureName'>{procedure.procedureName}</p> 

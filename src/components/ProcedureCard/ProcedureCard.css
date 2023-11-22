@@ -28,6 +28,35 @@
             padding:0;
             color: #1551B4;
         }
+
+
+            .procedure-card-data-heading {
+                display:flex;
+                flex-direction:row;
+                justify-content: space-between;
+                .procedure-card-data-firstline {
+                    display:flex;
+                    flex-direction:column;
+                }
+                .procedure-card-data-heading-rightside {
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    min-width:50px;
+
+                    .procedure-card-data-container {
+                        height:20px;
+                        width:20px;
+                        .procedure-card-data-image {
+                            height:100%;
+                            width:100%;
+                        }
+                    }
+                }
+            }
+
+
+
         .procedure-card-provider {
             margin:0;
             padding:0;
