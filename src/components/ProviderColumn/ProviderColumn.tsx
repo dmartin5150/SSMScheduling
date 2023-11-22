@@ -1,5 +1,6 @@
 import React  from "react";
 import BlockColumnHeader from "./ProviderColumnHeader/BlockColumnHeader";
+import BlockReleaseHeader from "./ProviderColumnHeader/BlockReleaseHeader";
 import ProcedureContainer from "./ProcedureContainer/ProcedureContainer";
 import { Provider } from "../../data/datatypes/provider";
 import { Block } from "../../data/datatypes/block";
@@ -20,9 +21,12 @@ interface ProviderColumnProps {
 const ProviderColumn: React.FC<ProviderColumnProps> = ({provider,block, procedures}) => {
     return (
         <div className='provider-column'>
-            <BlockColumnHeader provider={provider} block={block} />
+            {!block.released ? 
+                <BlockColumnHeader provider={provider} block={block} /> :
+                <BlockReleaseHeader provider={provider} block={block} />
+            }
             {procedures.map((procedure) => {
-                    return <ProcedureContainer procedure={procedure} />
+                    return <ProcedureContainer key={procedure.procedureId} procedure={procedure} block={block} />
             })}  
         </div>
     )
