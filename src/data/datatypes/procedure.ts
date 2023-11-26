@@ -10,6 +10,7 @@ export type Procedure = {
     procedureType:PROCEDURE_TYPES,
     providerId:number, 
     providerName: string;
+    dateString:string;
     timeString:string;
     patientName:string;
     procedureName:string;
